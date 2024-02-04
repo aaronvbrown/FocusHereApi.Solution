@@ -13,7 +13,7 @@ General statements like "Catch Up On Classwork" and "Get ready for class" can be
   * important assignments (with links)
   * important calendar dates
 
-This is intentionally an API so that it can be consumed by varying user interfaces, including web apps and browsers.  In the future, it may link directly to existing tools created by the student's school (Canvas, Jumprope, Etc.) in order to automate data population and feedback from educators.
+This is intentionally an API so that it can be consumed by varying user interfaces, including web apps and browsers.  In the future, it may link directly to existing tools created by the student's school (Canvas, Jumprope, Etc.) in order to automate data population and feedback from educators. Information will be queried with multiple filters, including default filters based on the current date.
 
 
 ## Technologies Used
