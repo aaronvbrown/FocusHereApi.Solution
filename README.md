@@ -5,6 +5,17 @@
 
 #### An API for tracking upcoming classes and focusing efforts for ADHD students and their families.
 
+## Description
+This API allows loading of class schedules, lessons and assignments for students of middle and high school.  Its aim is to narrow down attention demands to the most pertinent ones.  
+
+General statements like "Catch Up On Classwork" and "Get ready for class" can be overwhelming for students with ADHD.  This tool reduce those anxieties by showing only needed and impactful information about upcoming classes, including:
+  * lessons (with links)
+  * important assignments (with links)
+  * important calendar dates
+
+This is intentionally an API so that it can be consumed by varying user interfaces, including web apps and browsers.  In the future, it may link directly to existing tools created by the student's school (Canvas, Jumprope, Etc.) in order to automate data population and feedback from educators.
+
+
 ## Technologies Used
 
 * [C#](https://learn.microsoft.com/en-us/dotnet/csharp/)
@@ -14,8 +25,6 @@
 * [Postman](https://www.postman.com/)
 * [Visual Studio Code](https://code.visualstudio.com/download) + the C# Dev Kit Extension: ms-dotnettools.csdevkit
 
-## Description
-This API allows loading of class schedules, lessons and assignments for students of middle and high school.  Its aim is to narrow down attention demands to the most pertinent. 
 
 
 ## Setup Requirements
