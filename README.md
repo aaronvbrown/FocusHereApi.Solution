@@ -8,7 +8,7 @@
 ## Description
 This API allows loading of class schedules, lessons and assignments for students of middle and high school.  Its aim is to narrow down attention demands to the most pertinent ones.  
 
-General statements like "Catch Up On Classwork" and "Get ready for class" can be overwhelming for students with ADHD.  This tool reduce those anxieties by showing only needed and impactful information about upcoming classes, including:
+General statements like "Catch Up On Classwork" and "Get ready for class" can be overwhelming for students with ADHD.  This tool reduces those anxieties by showing only needed and impactful information about upcoming classes, including:
   * lessons (with links)
   * important assignments (with links)
   * important calendar dates
@@ -54,7 +54,7 @@ This is intentionally an API so that it can be consumed by varying user interfac
 * Interact with the API using Postman via **https://localhost:5000**
 
 ### Endpoints
-The base URL is: ***https://localhost:5000***
+The base URL is: ***https://localhost:7095***
 
 #### Request Structure
 ```
