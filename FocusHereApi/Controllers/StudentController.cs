@@ -4,7 +4,7 @@ using FocusHereApi.Models;
 
 namespace FocusHereApi.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/[Controller]")]
   [ApiController]
   public class StudentController : ControllerBase
   {
@@ -14,13 +14,13 @@ namespace FocusHereApi.Controllers
       _db = db;
     }
 
-    // GET: api/Student
-    // [HttpGet]
-    // public async Task<ActionResult<IEnumerable<Student>>> Get([FromQuery] StudentParameters, string name, string gradeLevel, string schoolName) 
-    // {
-    //   IQueryable<Student> query = _db.Students.AsQueryable();
-    //   return await query
-    //     .ToListAsync();
-    // }
+    //GET: api/Student
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Student>>> Get([FromQuery] StudentParameters studentParameters, string name, string gradeLevel, string schoolName) 
+    {
+      IQueryable<Student> query = _db.Students.AsQueryable();
+      return await query
+        .ToListAsync();
+    }
   }
 }
