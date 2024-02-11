@@ -17,6 +17,10 @@ List the absolute minimum features the project requires to meet this purpose or 
 - Daily Class Prep:  Sets expectations for upcoming classes
 - Grade Builder:  Which outstanding assignments carry the most weightfor classes in which the student is struggling?
 
+## Next Submission Goals:
+- Get One Endpoint Working
+- Basic UI
+
 
 ## Tooling: 
 What tools, frameworks, libraries, APIs, modules and/or other resources (whatever is specific to your track, and your language) will you use to create this MVP? List them all here. Be specific.
