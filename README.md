@@ -50,8 +50,8 @@ This is intentionally an API so that it can be consumed by varying user interfac
 * Run **dotnet watch run** in the command line to load in development mode with a watcher
 
 ## API Documentation
-* A swagger web page is configured to open showing api endpoints here:  **https://localhost:5000/swagger/index.html**
-* Interact with the API using Postman via **https://localhost:5000**
+* A swagger web page is configured to open showing api endpoints here:  **https://localhost:7095/swagger/index.html**
+* Interact with the API using Postman via **https://localhost:7095**
 
 ### Endpoints
 The base URL is: ***https://localhost:7095***
