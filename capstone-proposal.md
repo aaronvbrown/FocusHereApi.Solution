@@ -8,8 +8,11 @@ Assists ADHD students focus their efforts for success in education by narrowing 
 ## MVP:  
 List the absolute minimum features the project requires to meet this purpose or goal:
 ### API
+- Class: Student
 - Authentication
-- Class Schedule
+  - Class: User
+- Course Schedule
+  - Class: Course
 - Lessons
 - Assignments
 - Class Grades
