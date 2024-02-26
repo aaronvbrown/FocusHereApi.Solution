@@ -7,7 +7,8 @@ namespace FocusHereApi.Models
 
     public DbSet<Student> Students { get; set; }
 
-    public FocusHereApiContext(DbContextOptions<FocusHereApiContext> options) : base(options)
+    // public FocusHereApiContext(DbContextOptions<FocusHereApiContext> options) : base(options)
+    public FocusHereApiContext(DbContextOptions options) : base(options)
     {
     }
 

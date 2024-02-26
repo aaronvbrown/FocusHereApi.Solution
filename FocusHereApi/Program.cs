@@ -1,8 +1,12 @@
 using FocusHereApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using FocusHereApi.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var connectionString = builder.Configuration.GetConnectionString("FocusHereApiIdentityDbContextConnection");builder.Services.AddDbContext<FocusHereApiIdentityDbContext>(options =>
+    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<FocusHereApiIdentityDbContext>();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -30,7 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
