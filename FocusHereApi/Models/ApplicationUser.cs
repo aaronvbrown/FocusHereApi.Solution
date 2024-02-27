@@ -4,5 +4,6 @@ namespace FocusHereApi.Models
 {
   public class ApplicationUser : IdentityUser
   {
+    
   }
 }
