@@ -14,7 +14,7 @@ namespace FocusHereApi.Controllers
       _db = db;
     }
    
-    // GET: api/Student
+    // GET: api/Students
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Student>>> Get([FromQuery] StudentParameters studentParameters, string name, string gradeLevel, string schoolName) 
     {
@@ -36,6 +36,18 @@ namespace FocusHereApi.Controllers
       }
 
       return await query.ToListAsync();
+    }
+
+    // GET:  apiStudents/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Student>> GetStudent(int id)
+    {
+      var student = await _db.Students.FindAsync(id);
+      if (student == null)
+      {
+        return NotFound();
+      }
+      return student;
     }
   }
 }
