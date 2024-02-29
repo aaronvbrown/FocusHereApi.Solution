@@ -6,10 +6,10 @@ namespace FocusHereApi.Controllers
 {
   [Route("api/[Controller]")]
   [ApiController]
-  public class StudentController : ControllerBase
+  public class StudentsController : ControllerBase
   {
     private readonly FocusHereApiContext _db;
-    public StudentController(FocusHereApiContext db)
+    public StudentsController(FocusHereApiContext db)
     {
       _db = db;
     }
@@ -49,6 +49,42 @@ namespace FocusHereApi.Controllers
       }
       return student;
     }
+
+    // Post: api/Students
+    [HttpPost]
+    public async Task<ActionResult<Student>> Post(Student student)
+    {
+      _db.Students.Add(student);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction(nameof(GetStudent), new { id = student.StudentId }, student);
+    }
+
+    // Put: api/Students/5
+    // [HttpPut("{id}")]
+    // public async Task<IActionResult> Put(int id, Student student)
+    // {
+    //   if (id != student.StudentId)
+    //   {
+    //     return BadRequest();
+    //   }
+    //   _db.Students.Update(student);
+    //   try
+    //   {
+    //     await _db.SaveChangesAsync();
+    //   }
+    //   catch (DbUpdateConcurrencyException)
+    //   {
+    //     if (!StudentExists(id))
+    //     {
+    //       return NotFound();
+    //     }
+    //     else
+    //     {
+    //       throw;
+    //     }
+    //   }
+    //   return NoContent();
+    // }
   }
 }
 
