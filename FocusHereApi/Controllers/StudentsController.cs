@@ -4,7 +4,7 @@ using FocusHereApi.Models;
 
 namespace FocusHereApi.Controllers
 {
-  [Route("api/[Controller]")]
+  [Route("api/[controller]")]
   [ApiController]
   public class StudentsController : ControllerBase
   {
@@ -13,10 +13,10 @@ namespace FocusHereApi.Controllers
     {
       _db = db;
     }
-   
+
     // GET: api/Students
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Student>>> Get([FromQuery] StudentParameters studentParameters, string name, string gradeLevel, string schoolName) 
+    public async Task<ActionResult<IEnumerable<Student>>> Get([FromQuery] StudentParameters studentParameters, string name, string gradeLevel, string schoolName)
     {
       IQueryable<Student> query = _db.Students.AsQueryable();
 
@@ -60,31 +60,38 @@ namespace FocusHereApi.Controllers
     }
 
     // Put: api/Students/5
-    // [HttpPut("{id}")]
-    // public async Task<IActionResult> Put(int id, Student student)
-    // {
-    //   if (id != student.StudentId)
-    //   {
-    //     return BadRequest();
-    //   }
-    //   _db.Students.Update(student);
-    //   try
-    //   {
-    //     await _db.SaveChangesAsync();
-    //   }
-    //   catch (DbUpdateConcurrencyException)
-    //   {
-    //     if (!StudentExists(id))
-    //     {
-    //       return NotFound();
-    //     }
-    //     else
-    //     {
-    //       throw;
-    //     }
-    //   }
-    //   return NoContent();
-    // }
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Student student)
+    {
+      if (id != student.StudentId)
+      {
+        return BadRequest();
+      }
+      _db.Students.Update(student);
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!StudentExists(id)) //This is checking to see if the view for the student exists.  Is that needed for an API request?
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
+      return NoContent();
+    }
+
+    private bool StudentExists(int id)
+    {
+      return _db.Students.Any(e => e.StudentId == id);
+    }
+
+    
   }
 }
 
