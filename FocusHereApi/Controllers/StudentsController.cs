@@ -42,7 +42,7 @@ namespace FocusHereApi.Controllers
     [HttpGet("{id}")]
     public async Task<ActionResult<Student>> GetStudent(int id)
     {
-      var student = await _db.Students.FindAsync(id);
+      Student student = await _db.Students.FindAsync(id);
       if (student == null)
       {
         return NotFound();
@@ -91,7 +91,21 @@ namespace FocusHereApi.Controllers
       return _db.Students.Any(e => e.StudentId == id);
     }
 
-    
+    // Delete: api/Students/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteStudent(int id)
+    {
+      Student student = await _db.Students.FindAsync(id);
+      if (student == null)
+      {
+        return NotFound();
+      }
+      _db.Students.Remove(student);
+      await _db.SaveChangesAsync();
+      return NoContent();
+    }
+
+
   }
 }
 
