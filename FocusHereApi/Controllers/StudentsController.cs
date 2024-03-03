@@ -35,7 +35,10 @@ namespace FocusHereApi.Controllers
         query = query.Where(s => s.SchoolName.Contains(schoolName));
       }
 
-      return await query.ToListAsync();
+      return await query
+                      .Skip((studentParameters.PageNumber -1) * studentParameters.PageSize)
+                      .Take(studentParameters.PageSize)
+                      .ToListAsync();
     }
 
     // GET:  apiStudents/5
