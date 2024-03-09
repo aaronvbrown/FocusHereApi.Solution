@@ -22,6 +22,12 @@ namespace FocusHereApi.Models
               new Student { StudentId = 3, Name = "Jim Doe", GradeLevel = 10, SchoolName = "Springfield High School" },
               new Student { StudentId = 4, Name = "Jill Doe", GradeLevel = 9, SchoolName = "Springfield High School" }
           );
+      builder.Entity<Course>()
+          .HasData(
+              new Course { CourseId = 1, Name = "Math", Teacher = "Mr. Smith", Period = 1 },
+              new Course { CourseId = 2, Name = "Science", Teacher = "Mrs. Johnson", Period = 2 },
+              new Course { CourseId = 3, Name = "History", Teacher = "Mr. Johnson", Period = 3 }
+          );
     }
   }
 }

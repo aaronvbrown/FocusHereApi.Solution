@@ -6,10 +6,10 @@ namespace FocusHereApi.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class CourseController : ControllerBase
+  public class CoursesController : ControllerBase
   {
     private readonly FocusHereApiContext _db;
-    public CourseController(FocusHereApiContext db)
+    public CoursesController(FocusHereApiContext db)
     {
       _db = db;
     }
