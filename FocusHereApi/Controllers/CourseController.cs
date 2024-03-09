@@ -60,22 +60,22 @@ namespace FocusHereApi.Controllers
       return CreatedAtAction(nameof(GetCourse), new { id = course.CourseId }, course);
     }
 
-    // Put: api/Courses/5
+    // PUT: api/Courses/5
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, Student student)
+    public async Task<IActionResult> Put(int id, Course course)
     {
-      if (id != student.StudentId)
+      if (id != course.CourseId)
       {
         return BadRequest();
       }
-      _db.Students.Update(student);
+      _db.Courses.Update(course);
       try
       {
         await _db.SaveChangesAsync();
       }
       catch (DbUpdateConcurrencyException)
       {
-        if (!StudentExists(id)) //This is checking to see if the view for the student exists.  Is that needed for an API request?
+        if (!CourseExists(id))
         {
           return NotFound();
         }
@@ -87,24 +87,24 @@ namespace FocusHereApi.Controllers
       return NoContent();
     }
 
-    private bool StudentExists(int id)
+    private bool CourseExists(int id)
     {
-      return _db.Students.Any(e => e.StudentId == id);
+      return _db.Courses.Any(e => e.CourseId == id);
     }
 
-    // // Delete: api/Students/5
-    // [HttpDelete("{id}")]
-    // public async Task<IActionResult> DeleteStudent(int id)
-    // {
-    //   Student student = await _db.Students.FindAsync(id);
-    //   if (student == null)
-    //   {
-    //     return NotFound();
-    //   }
-    //   _db.Students.Remove(student);
-    //   await _db.SaveChangesAsync();
-    //   return NoContent();
-    // }
+    // DELETE: api/Students/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteCourse(int id)
+    {
+      Course course = await _db.Courses.FindAsync(id);
+      if (course == null)
+      {
+        return NotFound();
+      }
+      _db.Courses.Remove(course);
+      await _db.SaveChangesAsync();
+      return NoContent();
+    }
 
 
   }
