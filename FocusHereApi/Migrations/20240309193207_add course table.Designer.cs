@@ -2,6 +2,7 @@
 using FocusHereApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FocusHereApi.Migrations
 {
     [DbContext(typeof(FocusHereApiContext))]
-    partial class FocusHereApiContextModelSnapshot : ModelSnapshot
+    [Migration("20240309193207_add course table")]
+    partial class addcoursetable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

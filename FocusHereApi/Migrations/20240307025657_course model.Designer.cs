@@ -2,6 +2,7 @@
 using FocusHereApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,34 +10,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FocusHereApi.Migrations
 {
     [DbContext(typeof(FocusHereApiContext))]
-    partial class FocusHereApiContextModelSnapshot : ModelSnapshot
+    [Migration("20240307025657_course model")]
+    partial class coursemodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
-
-            modelBuilder.Entity("FocusHereApi.Models.Course", b =>
-                {
-                    b.Property<int>("CourseId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("Period")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Teacher")
-                        .HasColumnType("int");
-
-                    b.HasKey("CourseId");
-
-                    b.ToTable("Courses");
-                });
 
             modelBuilder.Entity("FocusHereApi.Models.Student", b =>
                 {
