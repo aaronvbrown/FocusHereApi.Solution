@@ -27,7 +27,7 @@ namespace FocusHereApi.Controllers
 
       if (!string.IsNullOrEmpty(gradeLevel) && int.TryParse(gradeLevel, out int gradeLevelInt))
       {
-        query = query.Where(s => s.GradeLevel == 11);
+        query = query.Where(s => s.GradeLevel == gradeLevelInt); //This is hard coded to 11.  It should be gradeLevelInt.
       }
 
       if (!string.IsNullOrEmpty(schoolName))
