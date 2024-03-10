@@ -9,6 +9,8 @@ namespace FocusHereApi.Models
 
     public DbSet<Course> Courses { get; set; }
 
+    public DbSet<ScheduledCourse> ScheduledCourses { get; set; }
+
     public FocusHereApiContext(DbContextOptions<FocusHereApiContext> options) : base(options)
     {
     }
